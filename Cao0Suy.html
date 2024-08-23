@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Học cùng bé Cáo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh+oOVwVF2/snOsQEQ/1z+lmU3bL+yvpKGsF0VRi4K4A4JtZtRC3846Tgb+iOv/+/A01M0hP/X5+96/KGwgv+eBv/+/A01M0hP/X5+96/KGwgv+eBv/"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./Style.css" />
+    <link rel="stylesheet" href="./Style1.css" />
+    <link rel="stylesheet" href="./HTD.html" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="Menu">
+        <div class="Logo">
+          <img
+            src="./pngtree-cute-fox-3d-render-digital-artwork-png-image_9048185.png"
+            alt="ENGLISH WITH CAO"
+            width="130"
+          />
+        </div>
+        <a href="./Cao0Suy.html" class="Calog">
+          <p style="color: white; font-size: 20px"><b>Trang chủ</b></p>
+        </a>
+        <p class="title">LEARN WITH CÁO</p>
+        <div class="vertical-line"></div>
+        <p class="title1"><b>LearnEverything</b></p>
+        <nav class="container">
+          <ul class="main-menu" id="searchResults">
+            <li>
+              <a href="#section1" style="font-size: 27px; color: white"
+                ><strong>Cấu trúc</strong></a
+              >
+              <ul class="sub-menu">
+                <li style="color: white">
+                  <a href="">Các thì trong Tiếng Anh</a>
+                  <ul class="sub-menu">
+                    <li style="color: white">
+                      <a href="./HTD.html">Thì hiện tại</a>
+                    </li>
+                    <li style="color: white">
+                      <a href="./QKD.html">Thì quá khứ</a>
+                    </li>
+                    <li style="color: white">
+                      <a href="./TTL.html">Thì tương lai</a>
+                    </li>
+                  </ul>
+                </li>
+                <li style="color: white">
+                  <a href="">Câu điều kiện</a>
+                  <ul class="sub-menu">
+                    <li style="color: white">
+                      <a href="./ĐK1.html">Điều kiện loại 1</a>
+                    </li>
+                    <li style="color: white">
+                      <a href="./DK2.html">Điều kiện loại 2</a>
+                    </li>
+                    <li style="color: white">
+                      <a href="./DK3.html">Điều kiện loại 3</a>
+                    </li>
+                    <li style="color: white">
+                      <a href="./THK.html"
+                        >Trường hợp khác trong câu điều kiện</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li style="color: white"><a href="">Thể bị động</a></li>
+                <li style="color: white"><a href="">Câu so sánh</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#section2" style="font-size: 27px; color: white"
+                ><strong>Từ vựng</strong></a
+              >
+            </li>
+            <li>
+              <a href="#section3" style="font-size: 27px; color: white"
+                ><strong>Kỹ năng</strong></a
+              >
+            </li>
+            <li>
+              <a href="#section3" style="font-size: 27px; color: white"
+                ><strong>Kiến thức khác</strong></a
+              >
+            </li>
+            <li>
+              <a href="#section3" style="font-size: 27px; color: white"
+                ><strong>Liên hệ</strong></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="BUTTON">
+      <button id="btnSearch">
+        <img
+          src="./pngtree-watermelon-fruit-icon-pixel-png-image_8923504.png"
+          alt=""
+        />
+      </button>
+      <div class="search" id="searchBox" style="display: block">
+        <input type="text" id="searchInput" placeholder="Search........." />
+      </div>
+      <div class="mic">
+        <button id="voiceSearch">
+          <img
+            src="./—Pngtree—vector microphone icon_4013734.png"
+            alt=""
+            class="voice"
+          />
+        </button>
+      </div>
+    </div>
+    <script>
+      const btnSearch = document.getElementById("btnSearch");
+      const searchBox = document.getElementById("searchBox");
+
+      btnSearch.addEventListener("click", () => {
+        if (searchBox.style.display === "none") {
+          searchBox.style.display = "block";
+        } else {
+          searchBox.style.display = "none";
+        }
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".sub-menu").parent("li").addClass("has-child");
+      });
+    </script>
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const voiceButton = document.getElementById("voiceSearch");
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+
+      voiceButton.addEventListener("click", () => {
+        recognition.start();
+      });
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        searchInput.value = transcript;
+      };
+    </script>
+    <script>
+      const searchResults = document.getElementById("searchResults");
+      searchInput.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          const searchTerm = searchInput.value.toLowerCase();
+          const items = searchResults.querySelectorAll("li");
+
+          items.forEach((item) => {
+            const link = item.querySelector("a");
+            const text = link.textContent.toLowerCase();
+
+            if (text.includes(searchTerm)) {
+              window.location.href = link.href;
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
